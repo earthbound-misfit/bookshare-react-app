@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.css'
-import { Home, About, CarListings, Dashboard, Favorites, Profile } from './components';
+import { Home, About, BookListings, Dashboard, Favorites, Profile } from './components';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux';
@@ -13,7 +13,7 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home title="Classic Car Sharing"/>
+          <Home title="Book Sharing App"/>
         </Route>
         <Route path='/about'>
           <About></About>
@@ -24,8 +24,8 @@ ReactDOM.render(
         <Route path='/profile'>
           <Profile></Profile>
         </Route>
-        <Route path='/cars'>
-          <CarListings></CarListings>
+        <Route path='/books'>
+          <BookListings></BookListings>
         </Route>
         <Route path='/favorites'>
           <Favorites></Favorites>

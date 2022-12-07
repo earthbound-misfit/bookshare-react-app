@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import { Navbar } from '../../components/Navbar'
 // import { Link } from 'react-router-dom';
-import RoadTrip from '../../assets/images/road-trip.jpg'
+import RainbowBooks from '../../assets/images/rainbow-books.jpg'
 
 interface Props {
   title?: string;
@@ -12,7 +12,7 @@ interface Props {
 const useStyles = makeStyles(
   {
       background: {
-      backgroundImage: `url(${RoadTrip})`,
+      backgroundImage: `url(${RainbowBooks})`,
       backgroundSize: 'cover',
       width: '100%',
       height: '100%',

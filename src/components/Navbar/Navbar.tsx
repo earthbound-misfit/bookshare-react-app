@@ -73,15 +73,15 @@ export const Navbar = () => {
         <>
           <div className={`${classes.row} ${classes.navbar} ${classes.width100} ${classes.alignCenter} ${classes.p5} ${classes.spaceBetween}`}>
             <div className={`${classes.navlogo} `}>
-                    <h1>Yewy</h1>
+                    <h1>BookWorm</h1>
             </div>
             <div className={`${classes.width60} ${classes.alignCenter}`}>
                 <ul className={`${classes.ul} ${classes.row} ${classes.spaceBetween} ${classes.psides}`}>
                     <li>
-                        <Button href='/cars' className={`${classes.navbarItem} ${classes.psides}`}>My Cars</Button>
+                        <Button href='/cars' className={`${classes.navbarItem} ${classes.psides}`}>My Bookshelf</Button>
                     </li>
                     <li>
-                        <Button href='/favorites' className={`${classes.navbarItem} ${classes.psides}`}>Favorited Cars
+                        <Button href='/favorites' className={`${classes.navbarItem} ${classes.psides}`}>Favorited Books
                         </Button>
                     </li>
                     <li>

@@ -3,19 +3,19 @@ import { createSlice } from '@reduxjs/toolkit';
 const rootSlice = createSlice({
     name: "root",
     initialState: {
-        make: 'Make',
-        model: 'Model',
-        year: 'Year',
-        color: 'Color',
+        title: 'Title',
+        author: 'Author',
+        isbn: 'ISBN',
+        pages: 'Pages',
     },
     reducers: {
-        chooseMake: (state, action) => { state.make = action.payload},
-        chooseModel: (state, action) => { state.model = action.payload},
-        chooseYear: (state, action) => { state.year = action.payload},
-        chooseColor: (state, action) => { state.color = action.payload},
+        chooseTitle: (state, action) => { state.title = action.payload},
+        chooseAuthor: (state, action) => { state.author = action.payload},
+        chooseIsbn: (state, action) => { state.isbn = action.payload},
+        choosePages: (state, action) => { state.pages = action.payload},
     }
 })
 
 // Export Reducer
 export const reducer = rootSlice.reducer;
-export const { chooseMake, chooseModel, chooseYear, chooseColor } = rootSlice.actions;
+export const { chooseTitle, chooseAuthor, chooseIsbn, choosePages } = rootSlice.actions;

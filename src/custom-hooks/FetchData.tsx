@@ -3,7 +3,7 @@ import { server_calls } from '../api'
 
 export const useGetData = () => {
 
-    const [carData, setData] = useState<[]>([ ]);
+    const [bookData, setData] = useState<[]>([ ]);
 
 		// function to get data
     async function handleDataFetch(){
@@ -17,5 +17,5 @@ export const useGetData = () => {
         handleDataFetch();
     }, [])
 				// We return the data that we've saved
-        return {carData, getData:handleDataFetch}
+        return {bookData, getData:handleDataFetch}
 }

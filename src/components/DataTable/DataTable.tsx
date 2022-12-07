@@ -7,15 +7,15 @@ import { Button, Dialog,
     DialogContent,
     DialogContentText,
     DialogTitle } from '@material-ui/core';
-import { CarForm } from '../CarForm';
+import { BookForm } from '../BookForm';
 
 
 const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 90, hide: true },
-    { field: 'make', headerName: 'Make', flex: 1 },
-    { field: 'model', headerName: 'Model', flex: 1 },
-    { field: 'year', headerName: 'Year', flex: 1 },
-    { field: 'color', headerName: 'Color', flex: 1 },
+    { field: 'title', headerName: 'Title', flex: 1 },
+    { field: 'author', headerName: 'Author', flex: 1 },
+    { field: 'isbn', headerName: 'ISBN', flex: 1 },
+    { field: 'pages', headerName: 'Pages', flex: 1 },
 ];
 
 interface gridData {
@@ -26,7 +26,7 @@ interface gridData {
 
 export const DataTable = () => {
 
-    let { carData, getData } = useGetData();
+    let { bookData, getData } = useGetData();
     let [open, setOpen] = useState(false);
     let [gridData, setData] = useState<gridData>({data:{}});
     const [selectionModel, setSelectionModel] = useState<any>([]);
@@ -48,9 +48,9 @@ export const DataTable = () => {
           <>
       
         <div style={{ height: 400, width: '75%' }}>
-            <h2>My Car Listings</h2>
+            <h2>My Book Listings</h2>
 
-        <DataGrid rows={ carData } columns={ columns } pageSize={ 5 } checkboxSelection={true} 
+        <DataGrid rows={ bookData } columns={ columns } pageSize={ 5 } checkboxSelection={true} 
         onSelectionModelChange={ (item) => {
             setSelectionModel(item)
           }}
@@ -61,10 +61,10 @@ export const DataTable = () => {
 
  
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-            <DialogTitle id="form-dialog-title">Update Car Listing {selectionModel}</DialogTitle>
+            <DialogTitle id="form-dialog-title">Update Book Listing {selectionModel}</DialogTitle>
             <DialogContent>
-                <DialogContentText>Update Car Listing</DialogContentText>
-                    <CarForm id={selectionModel!}/>
+                <DialogContentText>Update Book Listing</DialogContentText>
+                    <BookForm id={selectionModel!}/>
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleClose} color="primary">Cancel</Button>
