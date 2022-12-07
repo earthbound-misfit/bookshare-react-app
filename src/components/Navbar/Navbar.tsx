@@ -78,7 +78,7 @@ export const Navbar = () => {
             <div className={`${classes.width60} ${classes.alignCenter}`}>
                 <ul className={`${classes.ul} ${classes.row} ${classes.spaceBetween} ${classes.psides}`}>
                     <li>
-                        <Button href='/cars' className={`${classes.navbarItem} ${classes.psides}`}>My Bookshelf</Button>
+                        <Button href='/bookshelf' className={`${classes.navbarItem} ${classes.psides}`}>My Bookshelf</Button>
                     </li>
                     <li>
                         <Button href='/favorites' className={`${classes.navbarItem} ${classes.psides}`}>Favorited Books

@@ -33,7 +33,7 @@ import { RouteComponentProps, withRouter } from "react-router-dom";
 import { DataTable } from '../DataTable';
 import { BookForm } from '../BookForm'
 
-interface BookListingsProps{
+interface BookShelfProps{
     history: RouteComponentProps["history"];
     location: RouteComponentProps["location"];
     match: RouteComponentProps["match"];
@@ -152,7 +152,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 
 
-export const BookListings = withRouter((props:BookListingsProps) => {
+export const BookShelf = withRouter((props:BookShelfProps) => {
     const { history } = props;
     const classes = useStyles();
     const theme = useTheme();
@@ -205,12 +205,12 @@ export const BookListings = withRouter((props:BookListingsProps) => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.font} noWrap>
-                        My Car Listings
+                        My Bookshelf
                     </Typography>
-                    <Button className={classes.toolbar_button} onClick={handleDialogClickOpen}>Create New Listing</Button>
+                    <Button className={classes.toolbar_button} onClick={handleDialogClickOpen}>Add New Book</Button>
 
                     <Dialog open={dialogOpen} onClose={handleDialogClickClose} aria-labelledby="form-dialog-title">
-                        <DialogTitle id="form-dialog-title">Add New Listing</DialogTitle>
+                        <DialogTitle id="form-dialog-title">Add New Book</DialogTitle>
                         <DialogContent>
                             <DialogContentText></DialogContentText>
                             <BookForm />

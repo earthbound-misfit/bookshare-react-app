@@ -48,7 +48,7 @@ export const DataTable = () => {
           <>
       
         <div style={{ height: 400, width: '75%' }}>
-            <h2>My Book Listings</h2>
+            <h2>My Bookshelf</h2>
 
         <DataGrid rows={ bookData } columns={ columns } pageSize={ 5 } checkboxSelection={true} 
         onSelectionModelChange={ (item) => {
