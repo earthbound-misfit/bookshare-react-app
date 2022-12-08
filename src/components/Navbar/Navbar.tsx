@@ -34,7 +34,7 @@ const useStyles = makeStyles({
         top: 0,
         margin: 'auto',
         boxShadow: '12px 0 15px -4px rgba(31, 73, 125, 0.9)',
-        // backgroundColor: '#86B59A',
+        backgroundColor: 'rgba(49, 86, 173, 0.9)',
     },
     navbarItem: {
         color: 'white',

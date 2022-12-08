@@ -22,7 +22,8 @@ import { Drawer as MUIDrawer,
     DialogActions, 
     DialogContent,
     DialogContentText, 
-    DialogTitle  ,
+    DialogTitle,
+    Box,
 } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import MenuIcon from '@material-ui/icons/Menu'
@@ -32,6 +33,7 @@ import clsx from 'clsx';
 import { RouteComponentProps, withRouter } from "react-router-dom";
 import { DataTable } from '../DataTable';
 import { BookForm } from '../BookForm'
+import { url } from 'inspector';
 
 interface BookShelfProps{
     history: RouteComponentProps["history"];
@@ -61,7 +63,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         alignItems: 'center',
     },
     background: {
-      background: 'linear-gradient(153deg, rgba(255,255,255,1) 0%, rgba(102,180,163,1) 100%)',
+      backgroundImage: `url(${RainbowBooks})`,
       backgroundSize: 'cover',
       width: '100%',
       height: '100%',
@@ -130,9 +132,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     toolbar:{
       display: 'flex',
-      backgroundColor: '#66B4A4',
       color: 'white',
-      padding: '18px',
+      padding: '40px',
+      boxShadow: '0px 3px 20px black'
     },
     toolbar_button: {
       marginLeft: 'auto',

@@ -12,7 +12,7 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home title="Book Sharing App"/>
+          <Home title="Welcome to BookWorm!"/>
         </Route>
         <Route path='/about'>
           <About></About>

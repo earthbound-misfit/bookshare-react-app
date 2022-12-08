@@ -5,8 +5,8 @@ import { server_calls } from '../../api';
 import { Button, Dialog,
     DialogActions,
     DialogContent,
-    DialogContentText,
-    DialogTitle } from '@material-ui/core';
+    DialogTitle,
+  Box, makeStyles, createStyles, Theme } from '@material-ui/core';
 import { BookForm } from '../BookForm';
 
 
@@ -24,13 +24,42 @@ interface gridData {
     }
 }
 
+const useStyles = makeStyles((theme: Theme) => createStyles({
+  box_style: {
+    width: '70%',
+    height: '400px',
+    backgroundColor: 'rgba(255,255,255,0.9)',
+    marginTop: '80px',
+  },
+  update_button: {
+    backgroundColor: 'rgba(2,90,192,0.9)',
+    color: 'white',
+    marginRight: '10px',
+    boxShadow: '1px 2px 8px white',
+    padding: '10px 50px 10px 50px',
+    borderRadius: '10px',
+  },
+  delete_button: {
+    backgroundColor: 'rgba(255,255,255,0.8)',
+    color: 'black',
+    boxShadow: '1px 2px 8px black',
+    padding: '10px 50px 10px 50px',
+    borderRadius: '10px',
+  },
+  button_container: {
+    margin: '20px',
+    display: 'flex',
+    justifyContent: 'center',
+  }
+}));
+
 export const DataTable = () => {
 
     let { bookData, getData } = useGetData();
     let [open, setOpen] = useState(false);
     let [gridData, setData] = useState<gridData>({data:{}});
     const [selectionModel, setSelectionModel] = useState<any>([]);
-    
+    const classes = useStyles()
 
     let handleOpen = () => {
         setOpen(true)
@@ -46,32 +75,28 @@ export const DataTable = () => {
     }
         return (
           <>
-      
-        <div style={{ height: 400, width: '75%' }}>
-            <h2>My Bookshelf</h2>
-
+      <Box className={classes.box_style}>  
         <DataGrid rows={ bookData } columns={ columns } pageSize={ 5 } checkboxSelection={true} 
         onSelectionModelChange={ (item) => {
             setSelectionModel(item)
           }}
         />
-
-        <Button onClick={handleOpen}>Update</Button>
-        <Button variant="outlined" onClick={deleteData}>Delete</Button>
-
+      <div className={classes.button_container}>
+        <Button variant="contained" className={classes.update_button} onClick={handleOpen}>Update</Button>
+        <Button variant="contained" className={classes.delete_button} onClick={deleteData}>Delete</Button>
+        </div>
  
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
             <DialogTitle id="form-dialog-title">Update Book Listing {selectionModel}</DialogTitle>
             <DialogContent>
-                <DialogContentText>Update Book Listing</DialogContentText>
                     <BookForm id={selectionModel!}/>
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleClose} color="primary">Cancel</Button>
             </DialogActions>
         </Dialog>
-            
-        </div>
+           </Box> 
+      
         
         </>
     )
