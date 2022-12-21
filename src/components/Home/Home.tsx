@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import { Navbar } from '../../components/Navbar'
 // import { Link } from 'react-router-dom';
 import RainbowBooks from '../../assets/images/rainbow-books.jpg'
+import firebase from 'firebase'
 
 interface Props {
   title?: string;
@@ -36,7 +37,7 @@ const useStyles = makeStyles(
       borderRadius: '10px',
       marginTop: '60px',
       color: 'white',
-      boxShadow: '0px 0px 15px 8px',
+      boxShadow: '0px 0px 10px 8px',
     },
     button_text: {
       textDecoration: 'none',
@@ -60,7 +61,6 @@ export const Home = ( props:Props ) => {
               <Paper className={classes.backgroundPaper} elevation={24}>
                 <Box p={5}>
                 <h1>{ props.title }</h1>
-                <Button href="/bookshelf" className={classes.button_text}>Come On In!</Button> 
                 </Box>
                 </Paper>
             </div>

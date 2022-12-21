@@ -183,18 +183,6 @@ export const BookShelf = withRouter((props:BookShelfProps) => {
             text: 'Home',
             onClick: () => history.push('/')
         },
-        {
-            text: 'Sign In',
-            onClick: () => history.push('/signin')
-        },
-        {
-            text: 'About',
-            onClick: () => history.push('/about')
-        },
-        {
-            text: 'Favorites',
-            onClick: () => history.push('/favorites')
-        },
     ]
    return (
     <div className={`${classes.background}`}>

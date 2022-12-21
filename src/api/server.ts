@@ -4,7 +4,7 @@ let token = '86b53dc7ed3783876a451c7af1c77e85386cdfb29ab59fea';
 
 export const server_calls = {
     get: async () => {
-        const response = await fetch(`http://127.0.0.1:5000/api/bookshelf`,{
+        const response = await fetch(`https://glitch.com/~broadleaf-peat-racer/api/bookshelf`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ export const server_calls = {
     },
 
     create: async(data: any = {}) => {
-        const response = await fetch(`http://127.0.0.1:5000/api/bookshelf`,{
+        const response = await fetch(`https://glitch.com/~broadleaf-peat-racer/api/bookshelf`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export const server_calls = {
         return await response.json()
     },
     update: async (id:string, data:any = {}) => {
-        const response = await fetch(`http://127.0.0.1:5000/api/bookshelf/${id}`, {
+        const response = await fetch(`https://glitch.com/~broadleaf-peat-racer/api/bookshelf/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export const server_calls = {
         });
     },
     delete: async(id:string) => {
-        const response = await fetch(`http://127.0.0.1:5000/api/bookshelf/${id}`,{
+        const response = await fetch(`https://glitch.com/~broadleaf-peat-racer/api/bookshelf/${id}`,{
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

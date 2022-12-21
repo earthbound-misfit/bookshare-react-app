@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.css'
-import { Home, About, BookShelf, Dashboard, Favorites, Profile } from './components';
+import { Home, About, BookShelf, Dashboard, SignIn, Profile } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import { FirebaseAppProvider, AuthCheck } from 'reactfire';
+import { firebaseConfig } from './firebaseConfig';
+import 'firebase/auth';
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <FirebaseAppProvider firebaseConfig={firebaseConfig} suspense={true}>
     <Provider store={store}>
     <Router>
       <Switch>
@@ -26,12 +31,13 @@ ReactDOM.render(
         <Route path='/bookshelf'>
           <BookShelf></BookShelf>
         </Route>
-        <Route path='/favorites'>
-          <Favorites></Favorites>
+        <Route path='/signin'>
+          <SignIn></SignIn>
         </Route>
       </Switch>
     </Router>
     </Provider>
+    </FirebaseAppProvider>
   </React.StrictMode>,
   document.getElementById('root') as HTMLElement
 );

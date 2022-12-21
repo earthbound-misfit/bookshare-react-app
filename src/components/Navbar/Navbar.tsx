@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { makeStyles } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-// import { Link } from 'react-router-dom';
+import {Button} from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { AuthCheck } from 'reactfire';
+import firebase from 'firebase'
 
 const useStyles = makeStyles({
     navlogo: {
@@ -12,6 +14,7 @@ const useStyles = makeStyles({
         fontSize: '1.5rem',
         color: 'white',
         fontWeight: 'bolder',
+        textDecoration: 'none',
     },
     center: {
         justifyContent: 'center',
@@ -61,7 +64,7 @@ const useStyles = makeStyles({
         width: '100%',
     },
     psides: {
-        paddingRight: '10px',
+        paddingRight: '30px',
         paddingLeft: '10px',
     },
 })
@@ -73,20 +76,29 @@ export const Navbar = () => {
         <>
           <div className={`${classes.row} ${classes.navbar} ${classes.width100} ${classes.alignCenter} ${classes.p5} ${classes.spaceBetween}`}>
             <div className={`${classes.navlogo} `}>
-                    <h1>BookWorm</h1>
+                    <a href="/" className={`${classes.navlogo}`}><h1>BookWorm</h1></a>
             </div>
-            <div className={`${classes.width60} ${classes.alignCenter}`}>
-                <ul className={`${classes.ul} ${classes.row} ${classes.spaceBetween} ${classes.psides}`}>
-                    <li>
-                        <Button href='/bookshelf' className={`${classes.navbarItem} ${classes.psides}`}>My Bookshelf</Button>
-                    </li>
-                    <li>
-                        <Button href='/favorites' className={`${classes.navbarItem} ${classes.psides}`}>Favorited Books
+                        <div className={`${classes.width60} ${classes.alignCenter}`}>
+                <ul className={`${classes.ul} ${classes.row} ${classes.spaceBetween}`}>
+                   <Suspense fallback={'loading...'}>
+                    <AuthCheck fallback={
+                      <li>
+
+
+                        <Button> 
+                          <Link to='/signin' className={`${classes.navbarItem}`}>Sign In</Link>
                         </Button>
+
+
                     </li>
+                    }>
                     <li>
-                        <Button href='/about' className={`${classes.navbarItem} ${classes.psides}`}>About Us</Button>
+                        <Button href='/bookshelf' className={`${classes.navbarItem}`}>Bookshelf</Button>
                     </li>
+                    <Button className={`${classes.navbarItem} ${classes.psides}`} onClick={() => firebase.auth().signOut()}>Sign Out</Button>
+                    </AuthCheck>
+                    
+                    </Suspense>
                 </ul>
             </div>
         </div>

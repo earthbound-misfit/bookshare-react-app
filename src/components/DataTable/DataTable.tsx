@@ -26,10 +26,11 @@ interface gridData {
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   box_style: {
-    width: '70%',
+    width: '90%',
     height: '400px',
     backgroundColor: 'rgba(255,255,255,0.9)',
     marginTop: '80px',
+    borderRadius: '8px',
   },
   update_button: {
     backgroundColor: 'rgba(2,90,192,0.9)',
@@ -76,7 +77,7 @@ export const DataTable = () => {
         return (
           <>
       <Box className={classes.box_style}>  
-        <DataGrid rows={ bookData } columns={ columns } pageSize={ 5 } checkboxSelection={true} 
+        <DataGrid rows={ bookData } columns={ columns } pageSize={ 10 } checkboxSelection={true} 
         onSelectionModelChange={ (item) => {
             setSelectionModel(item)
           }}
