@@ -1,10 +1,10 @@
 import React from 'react';
 import { makeStyles, Paper, Box } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import { Navbar } from '../../components/Navbar'
+import { Navbar } from '../../components/Navbar';
 // import { Link } from 'react-router-dom';
-import RainbowBooks from '../../assets/images/rainbow-books.jpg'
-import firebase from 'firebase'
+import RainbowBooks from '../../assets/images/rainbow-books.jpg';
+import firebase from 'firebase';
 
 interface Props {
   title?: string;
@@ -50,7 +50,7 @@ const useStyles = makeStyles(
   }
 )
 
-export const Home = ( props:Props ) => {
+export const Home = ( props:Props) => {
   const classes = useStyles();
   return (
     <>

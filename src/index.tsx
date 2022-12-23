@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.css'
-import { Home, About, BookShelf, Dashboard, SignIn, Profile } from './components';
+import { Home, About, BookShelf, SignIn } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
@@ -22,12 +22,6 @@ ReactDOM.render(
         <Route path='/about'>
           <About></About>
         </Route> 
-        <Route path='/dashboard'>
-          <Dashboard></Dashboard>
-        </Route>
-        <Route path='/profile'>
-          <Profile></Profile>
-        </Route>
         <Route path='/bookshelf'>
           <BookShelf></BookShelf>
         </Route>

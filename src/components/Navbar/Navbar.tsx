@@ -97,6 +97,9 @@ export const Navbar = () => {
                     </li>
                     <Button className={`${classes.navbarItem} ${classes.psides}`} onClick={() => firebase.auth().signOut()}>Sign Out</Button>
                     </AuthCheck>
+                    <li>
+                        <Button href='/about' className={`${classes.navbarItem} ${classes.psides}`}>About</Button>
+                    </li>
                     
                     </Suspense>
                 </ul>
