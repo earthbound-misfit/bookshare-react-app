@@ -61,6 +61,8 @@ export const Home = ( props:Props) => {
               <Paper className={classes.backgroundPaper} elevation={24}>
                 <Box p={5}>
                 <h1>{ props.title }</h1>
+                <br />
+                <p>Please sign in above to get started!</p>
                 </Box>
                 </Paper>
             </div>
